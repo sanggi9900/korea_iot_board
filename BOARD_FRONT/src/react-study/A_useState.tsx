@@ -14,6 +14,7 @@ import React, { useState } from 'react'
 
 // useState의 리턴값
 // : [상태변수, 상태업데이트함수]
+//       변수 ,   배열
 
 // const 상태변수 = 초기값;
 

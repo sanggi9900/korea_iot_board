@@ -116,7 +116,7 @@ export default function C_StateEffect() {
 
       <input 
         type="text"
-        value={category}
+        value={query}
         onChange={handleCategoryChange}  
         placeholder='Enter Category'
         required
