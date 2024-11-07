@@ -31,6 +31,6 @@ public class Article {
     private Long authorId;
 
     @Builder.Default // 기본으로 만들어진다
-    @OneToMany(mappedBy = "aricle", cascade = CascadeType.ALL, orphanRemoval = true) // 비어 있어도 된다, 게시글이 없으면 없어진다 .연관된 댓글 모두
+    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 }
