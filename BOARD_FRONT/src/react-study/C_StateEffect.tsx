@@ -44,7 +44,7 @@ export default function C_StateEffect() {
   }
 
   const fetchMenuData = async (category: string) => {
-    if (category.trim()) {
+    if (category.trim()) { // 카테고리 공백제거                                   
       try {
 
         const response = await axios.get(
@@ -63,15 +63,17 @@ export default function C_StateEffect() {
   }
 
   //! 자습) 버튼 클릭으로 필터링 구현하기
-  //! 매개변수 query 변경
-  const fetchMenuButtonData = async (category: string) => {
+  //! 매개변수 query 변경  
+  const fetchMenuButtonData = async (category: string) => {  
     if (category.trim()) {
       try {
-
+// await: async 함수 안에서만 동작, 프라미스 처리될때 까지 기다린다 결과는 그 이후 반환
+// axios: 비동기 통신 라이브러리
         const response = await axios.get(
-          `${DOMAIN}/${MENU_API}/search/category`,
+          `${DOMAIN}/${MENU_API}/search/category`, // 서버 경로
           //! params 값 변경
-          { params: { category }}
+          { params: { category }}  // axios의 옵션 객체
+          // {category : category} 값변경 가능 
         );
 
         const data = response.data.data;

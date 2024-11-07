@@ -26,7 +26,7 @@ export default function SignUp() {
   const [userInfo, setUserInfo] = useState<UserInfo>({
     email: "",
     password: "",
-    confirmPassword: "",
+    confirmPassword: ""
   });
 
   // errors: 유효성 검사 오류 메시지를 관리(저장)
@@ -44,7 +44,7 @@ export default function SignUp() {
       // cf) 스프레드 연산자
       //    : 배열, 객체 내부의 요소만 복사
       ...userInfo,
-      [e.target.value]: element.value
+      [element.name]: element.value
     })
   };
 

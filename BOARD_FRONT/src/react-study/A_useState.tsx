@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 // 3. Hook
 
 // cf) Hook
-// : 리액트 함수형 컴포넌트에서 사용할 수 있는 기능의 모음
+// : 리액트 함수형 컴포넌트 내에서 사용할 수 있는 기능의 모음
 // : 문법 체계가 'use-'로 시작
 
 //! useState 사용법
@@ -16,7 +16,7 @@ import React, { useState } from 'react'
 // : [상태변수, 상태업데이트함수]
 //       변수 ,   배열
 
-// const 상태변수 = 초기값;
+// const 상태변수 = 초기값;                
 
 // const 상태업데이트함수 = () => {
 // };
@@ -41,13 +41,13 @@ interface LoginState {
   password: string;
 }
 
-export default function A_useState() {
+export default function A_useState() {//  A_useState 이름을 가진 함수 실행
+  // const 상수선언 
   const [count, setCount] = useState<number>(0);
+ //  숫자 타입의 초기값 0을 가지는 count    setCount 함수의 값의 변화는   count에 저장
 
-  const [loginState, setLoginState] = useState<LoginState>({
-    email: '',
-    password: ''
-  });
+  const [loginState, setLoginState] = useState<LoginState>({ email: '', password: '' });
+// loginState란 초기값 setLoginState란 상태변화 함수
 
   const { email, password } = loginState;
 
@@ -73,6 +73,10 @@ export default function A_useState() {
 
   // 여러 input창을 관리하는 이벤트 핸들러
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // e: React.ChangeEvent<HTMLInputElement> :  HTML inoput 요소에서 발생하는
+    // ChangeEvent를 의미
+
+    
     const { name, value } = e.target;
 
     setLoginState((prevState) => ({
